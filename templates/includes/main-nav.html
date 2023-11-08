@@ -8,7 +8,7 @@
                 <a href="" class="dropdown-item">By Price</a>
                 <a href="" class="dropdown-item ">By Rating</a>
                 <a href="" class="dropdown-item ">By Category</a>
-                <a href="" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
@@ -17,10 +17,10 @@
               Cellphone
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="Cellphone">
-                <a href="" class="dropdown-item">Iphone</a>
-                <a href="" class="dropdown-item">Samsung</a>
-                <a href="" class="dropdown-item">MI</a>
-                <a href="" class="dropdown-item">All Cellphone</a>
+                <a href="{% url 'products' %}?category=Iphone" class="dropdown-item">Iphone</a>
+                <a href="{% url 'products' %}?category=Samsung" class="dropdown-item">Samsung</a>
+                <a href="{% url 'products' %}?category=MI" class="dropdown-item">MI</a>
+                <a href="{% url 'products' %}?category=Iphone,Samsung,MI" class="dropdown-item">All Cellphone</a>
             </div>
         </li>
 
@@ -29,12 +29,12 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="Accessories-link">
-                <a href="" class="dropdown-item">Glass</a>
-                <a href="" class="dropdown-item">Cover</a>
-                <a href="" class="dropdown-item">Cable</a>
-                <a href="" class="dropdown-item">Charger</a>
-                <a href="" class="dropdown-item">Holder</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=Glass" class="dropdown-item">Glass</a>
+                <a href="{% url 'products' %}?category=Cover" class="dropdown-item">Cover</a>
+                <a href="{% url 'products' %}?category=Cable" class="dropdown-item">Cable</a>
+                <a href="{% url 'products' %}?category=Charger" class="dropdown-item">Charger</a>
+                <a href="{% url 'products' %}?category=Holder" class="dropdown-item">Holder</a>
+                <a href="{% url 'products' %}?category=Glass,Cover,Cable,Charger,Holder" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
@@ -43,10 +43,10 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=New_Arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?category=Deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=Clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=New_Arrivals,Deals,Clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
