@@ -21,7 +21,12 @@ body {
 
 .logo-font {
     text-transform: uppercase;
-}
+ }
+
+.new {
+    margin-top: 200px;
+    color: #fcfbfd;
+ }
 
 .main-logo-link {
     width: fit-content;
