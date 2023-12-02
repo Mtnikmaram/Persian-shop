@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://persian-shop-04122018a8ef.herokuapp.com/','localhost']
+ALLOWED_HOSTS = ['https://persian-shop-04122018a8ef.herokuapp.com','localhost']
 
 # Application definition
 
