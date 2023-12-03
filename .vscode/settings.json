@@ -4,9 +4,12 @@
         "corecss",
         "corejs",
         "gatn",
+        "gunicorn",
+        "herokuapp",
         "nxoclm",
         "persianshop",
         "postloadjs",
-        "socialaccount"
+        "socialaccount",
+        "wsgi"
     ]
 }
