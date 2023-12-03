@@ -24,9 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-gatn!$p25vw&)ys7b%*z=!g+nxoclm%7^149i!=9nd$yru%a-0"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
-
-ALLOWED_HOSTS = ['persian-shop-04122018a8ef.herokuapp.com', 'localhost', '127.0.0.1']
+DEBUG = True
+ALLOWED_HOSTS = []
 
 # Application definition
 
