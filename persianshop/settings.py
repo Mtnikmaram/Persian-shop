@@ -128,17 +128,15 @@ WSGI_APPLICATION = 'persianshop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+DATABASE_URL ='postgres://evtmaxlq:0Wp1e1VY5crBBZegIiAH6G1v0zaNWAXD@snuffleupagus.db.elephantsql.com/evtmaxlq' 
+    
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+  'default': dj_database_url.parse(DATABASE_URL)
+} 
 
-
-if 'DATABASE_URL' in os.environ:
-    db_from_env = dj_database_url.config(conn_max_age=600)
-    DATABASES['default'].update(db_from_env)
+#if 'DATABASE_URL' in os.environ:
+#   db_from_env = dj_database_url.config(conn_max_age=600)
+#  DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
