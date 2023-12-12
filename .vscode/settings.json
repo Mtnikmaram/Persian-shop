@@ -6,10 +6,13 @@
         "gatn",
         "gunicorn",
         "herokuapp",
+        "mohammadtaghi",
+        "nikmaram",
         "nxoclm",
         "persianshop",
         "postloadjs",
         "socialaccount",
+        "whitenoise",
         "wsgi"
     ]
 }

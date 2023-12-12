@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /profile/
+Sitemap: https://persian-shop.onrender.com/sitemap.xml
