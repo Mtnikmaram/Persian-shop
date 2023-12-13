@@ -60,7 +60,7 @@ The goal is to introduce the shop in online network.
 
 
 * **Search Engine Optimization (SEO)**
-Search Engine Optimization is a very important method to improve the ranking on search-engines (and has a high Return Of Investement if done right). The ambition is that persianshop includes relevant, professional and reliable content and offers a hassle free experience for the site user. persianshop has an ambition (even thought it's not an easy task) to use keywords in the content that matches the users search criterias when using search engines. Descriptive Meta Tags have been implemented on the site after a brainstorming session (and use of [Wordtracker](https://www.wordtracker.com/)). 
+Search Engine Optimization is a very important method to improve the ranking on search-engines (and has a high Return Of Investment if done right). The ambition is that persianshop includes relevant, professional and reliable content and offers a hassle free experience for the site user. persianshop has an ambition (even thought it's not an easy task) to use keywords in the content that matches the users search criteria when using search engines. Descriptive Meta Tags have been implemented on the site after a brainstorming session (and use of [Wordtracker](https://www.wordtracker.com/)). 
 [Back to top](<#table-of-content>)
 
 ## Project Management
