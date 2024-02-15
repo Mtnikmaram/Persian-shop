@@ -141,6 +141,12 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+    
+DATABASE_URL ='postgres://evtmaxlq:0Wp1e1VY5crBBZegIiAH6G1v0zaNWAXD@snuffleupagus.db.elephantsql.com/evtmaxlq'
+
+DATABASES = {
+'default': dj_database_url.parse(DATABASE_URL)
+}
   # Password validation
   # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
