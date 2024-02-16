@@ -25,12 +25,12 @@ SECRET_KEY = 'p)cmf-(a(fxl=lbx)ygnkz5s)m4j1!&psn0i_b9df#^h*gs)i)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
 ALLOWED_HOSTS = ['https://persian-shop.onrender.com', 'localhost', '127.0.0.1']
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-   ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+#RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+#if RENDER_EXTERNAL_HOSTNAME:
+#   ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 # Application definition
 
 INSTALLED_APPS = [
@@ -64,9 +64,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    #'allauth.account.middleware.AccountMiddleware',
+    
 ]
 
 
@@ -86,7 +86,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  # required by allauth
+                'django.template.context_processors.request',  
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -129,12 +129,19 @@ WSGI_APPLICATION = 'persianshop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
-DATABASE_URL ='postgres://evtmaxlq:0Wp1e1VY5crBBZegIiAH6G1v0zaNWAXD@snuffleupagus.db.elephantsql.com/evtmaxlq'
-
-DATABASES = {
-'default': dj_database_url.parse(DATABASE_URL)
-}
+    
   # Password validation
   # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
