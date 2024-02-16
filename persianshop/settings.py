@@ -25,8 +25,8 @@ SECRET_KEY = 'p)cmf-(a(fxl=lbx)ygnkz5s)m4j1!&psn0i_b9df#^h*gs)i)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
-ALLOWED_HOSTS = ['persian-shop-04122018a8ef.herokuapp.com', 'localhost', '127.0.0.1']
+DEBUG = 'DEVELOPMENT' in os.environ
+ALLOWED_HOSTS = ['https://persian-shop.onrender.com', 'localhost', '127.0.0.1']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -66,7 +66,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    #'allauth.account.middleware.AccountMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
+    'allauth.socialaccount.middleware.SocialAccountMiddleware',
+
 
 ]
 
