@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 import dj_database_url
 from pathlib import Path
+if os.path.isfile('env.py'):
+     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'p)cmf-(a(fxl=lbx)ygnkz5s)m4j1!&psn0i_b9df#^h*gs)i)'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['https://persian-shop.onrender.com', 'localhost', '127.0.0.1']
 
 #RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -39,9 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -51,6 +55,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'blog',
     
     'crispy_forms',
     "crispy_bootstrap4",
@@ -65,7 +70,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     #'allauth.account.middleware.AccountMiddleware',
 
     
@@ -143,7 +147,6 @@ else:
         }
     }
 
-    
   # Password validation
   # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -179,6 +182,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+	
+MEDIA_URL = '/media/'	
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'	
+STATIC_URL = '/static/'	
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'	
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]	
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')	
+
+'''
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
@@ -186,7 +198,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+'''
 
 
 	
