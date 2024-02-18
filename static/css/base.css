@@ -179,6 +179,15 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+
+#mc_embed_signup{
+    padding: auto;
+    background:none;
+    clear:left; 
+    font:14px Helvetica,Arial,sans-serif; 
+    width: 600px;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -271,6 +280,8 @@ input[name='q']::placeholder {
 }
 
 
+
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -332,3 +343,4 @@ input[name='q']::placeholder {
         padding: .25rem .5rem !important;
     }
 }
+
