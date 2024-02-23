@@ -1,27 +1,9 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.shortcuts import render
+from django.views import generic
 from .models import Post
-from .forms import PostForm
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class PostListView(ListView):
-    model = Post
-    template_name = 'blog/post_list.html'
-    context_object_name = 'posts'
-    ordering = ['-date_published']
-
-
-class PostDetailView(DetailView):
-    model = Post
-    template_name = 'blog/post_detail.html'
-
-
-class PostCreateView(LoginRequiredMixin, CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'blog/post_form.html'
-    login_url = '/login/'  # Redirects to login page if user not logged in
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+class post_list(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-date_published')
+    template_name = 'index.html'
+    paginate_by = 3

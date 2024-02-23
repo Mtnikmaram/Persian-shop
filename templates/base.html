@@ -145,12 +145,8 @@
     </script>
     {% endblock %}
    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+    {% block footer %}
    
     <footer class="footer mt-auto py-3 dark-bg">
     <div class="container quotes-container content-container">
@@ -165,7 +161,7 @@
          <div class="col-12 col-md-6 text-white">
            <h3>Social</h3>
            <p>Keep up to date with all our latest offers</p>
-           <a href="https://www.facebook.com/persianshopproject5" target="_blank" class='text-white'><i class="fab fa-facebook-square text-white"></i> Follow us on Facebook!</a>
+           <a href="https://www.facebook.com/persianshopproject5" target="_blank" ><i class="fab fa-facebook-square "></i> Follow us on Facebook!</a>
          </div>
          <div class="col-12 col-md-6 text-white">
            
@@ -201,6 +197,6 @@
      </section>
    </div>
  </footer>
-
+    {% endblock %}
   </body>
 </html>

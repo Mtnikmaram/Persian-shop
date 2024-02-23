@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/background.jpg') no-repeat center center fixed;
+    background: url('/media/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -188,6 +188,11 @@ input[name='q']::placeholder {
     width: 600px;
 }
 
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 20px 0;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
