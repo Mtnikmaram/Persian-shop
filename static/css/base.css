@@ -1,15 +1,13 @@
 html {
     height: 100%;
 }
-
 body {
-    background: url('/media/bg.jpg') no-repeat center center fixed;
+    background-image:url('https://res.cloudinary.com/dfnebv6jc/image/upload/v1708770527/media/lrjjtmwhwf3ycuwkpt1c.jpg');
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
-}
-
+    }
 /* from Bulma */
 .icon {
     align-items: center;
