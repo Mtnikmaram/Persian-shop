@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>PersianShop Blog</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PersianShop Blog">
+    <meta name="keywords" content="PersianShop Blog">
+    <meta name="author" content="Mtnikmaram">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Static CSS Style Sheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    
+
+    
+</head>
+
+<body class="d-flex flex-column h-100 main-bg">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'blog'%}">PersianShop Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home'%}">PersianShop</a>
+                    </li>
+                    
+            {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{ user }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Create New post</a></li>
+                            <li><a class="dropdown-item" href="#">View My posts</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Show profile Page</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+                    </li>
+
+                    {% else %}
+                    <li><a class="nav-link" href="{% url 'account_login' %}">Log In / Sign Up</a></li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        
+
+        {% endblock content %}
+    </main>
+
+    
+    <footer class="footer mt-auto py-3 dark-bg">
+        <p class="m-0 text-center text-white">created by mtnikmaram</p>
+        <p class="m-0 text-center text-white">fallow us : </p>
+        <div class="text-center my-4">
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-2" href="https://www.instagram.com/" target="_blank"
+                rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)" role="button"><i
+                    class="fab fa-instagram"></i></a>
+            <!-- Linked In -->
+            <a class="btn btn-outline-light btn-floating m-2" href="https://www.linkedin.com/" target="_blank"
+                rel="noopener" aria-label="Visit our Linkedin page (opens in a new tab)" role="button"><i
+                    class="fab fa-linkedin"></i></a>
+            <!-- Youtube -->
+            <a class="btn btn-outline-light btn-floating m-2" href="https://youtube.com/" target="_blank"
+                rel="noopener" aria-label="Visit our Youtube page (opens in a new tab)" role="button"><i
+                    class="fab fa-youtube"></i></a>
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-2" href="https://twitter.com/" target="_blank"
+                rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)" role="button"><i
+                    class="fab fa-twitter"></i></a>
+        </div>
+        
+    </footer>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <!-- jQuery script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Static JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2000);
+    </script>
+    
+</body>
+
+</html>
