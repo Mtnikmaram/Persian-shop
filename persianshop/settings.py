@@ -56,8 +56,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
-    'blog',
-    
+        
     'crispy_forms',
     "crispy_bootstrap4",
 
@@ -71,7 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
+    #'allauth.account.middleware.AccountMiddleware',
 
     
 ]
