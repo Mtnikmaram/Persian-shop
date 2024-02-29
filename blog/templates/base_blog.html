@@ -50,12 +50,12 @@
                             {{ user }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Create New post</a></li>
-                            <li><a class="dropdown-item" href="#">View My posts</a></li>
+                            <li><a class="dropdown-item" href="{% url 'create_post' %}">Create New post</a></li>
+                            <li><a class="dropdown-item" href="{% url 'view_post' %}">View My posts</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Show profile Page</a></li>
+                            <li><a class="dropdown-item" href="{% url 'show_profile' %}">Show profile Page</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

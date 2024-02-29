@@ -1,0 +1,22 @@
+{% extends 'base_blog.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <h1 class="headline mt-4">Profile</h1>
+    <hr>
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="card mb-4 border-0 shadow p-3 bg-white rounded">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ edit_profile_form|crispy }}
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
