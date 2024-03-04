@@ -133,7 +133,7 @@ WSGI_APPLICATION = 'persianshop.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 DATABASES = {
         'default': {
