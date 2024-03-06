@@ -37,28 +37,22 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.body }}</p>
                             </a>
-                            <hr />
+                            <hr/>
                             <p class="card-text text-muted h6">{{ post.created_on|date:"F d, Y" }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                                 {% else %}
                                 <div class="alert alert-info">
                                     <p class="mb-0">To see more, please <a class="alert-link" href="{% url 'account_login' %}">login</a></p>
                                 </div>
-                                {% endif %}
-                            
-                            
+                                {% endif %}                                                        
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
-            </div>
-
-            
-            <div class="row">
                 {% endif %}
                 {% endfor %}
-
-            </div>
+            </div>            
+           
         </div>
     </div>
     {% if is_paginated %}
