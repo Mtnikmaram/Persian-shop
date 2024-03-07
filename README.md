@@ -86,7 +86,7 @@ Models used (besides standard user model) in this project are:
 
 **App: Profiles**
 * **UserProfile** - Keeps track of all information connected to delivery information and order history. Also includes a method to create or update the user profile depending of if it exists or not.
-
+![schema](static/readme/database_schema.png)
 
 # **User Experience (UX)**
 
